@@ -1,1 +1,11 @@
 Hello World
+
+temp blog
+
+Creating a gMSA (Group Managed Service Account)
+1. Fired up AD lab
+2. Created KDS root key
+3. Created new service account with params like this:
+    New-ADServiceAccount -Name gMSA1 -DNSHostName gMSA1.derp.lab -ServicePrincipalNames HTTP/gMSA1.derp.lab
+4. Created group 'gmsahostgroup1' or something like that. Added test client to it.
+5. Added group to service account's PrincipalsAllowedToRetrieveManagedPassword attribute.
